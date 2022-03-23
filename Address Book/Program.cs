@@ -28,7 +28,7 @@ namespace AddressBook
             this.Phone_Number = Phone_Number;
             this.Email_Address = Email_Address;
         }
-        public string tostring()
+        public override string ToString()
         {
             return " Details of  " + First_Name + " " + Last_Name + " are: " + "Address: " + Address + " city: " + City + "\n"
                                              + "                            " + "State: " + State + " Zip: " + ZIP + "\n"
@@ -68,6 +68,13 @@ namespace AddressBook
             contactDetailslist.Add(contactDetails);
             contactDetailsMap.Add(First_Name, contactDetails);
         }
+        public void ComputeDetails()
+        {
+            foreach (KeyValuePair<string,ContactDetails> contact in contactDetailsMap)
+            {
+                Console.WriteLine(contact.Value);
+            }
+        }
         public void EditDetails(string key)
         {
             if (contactDetailsMap.ContainsKey(key))
@@ -97,13 +104,20 @@ namespace AddressBook
                 Console.WriteLine("Key Not Found.");
             }
         }
-        public void ComputeDetails()
+        public void DeleteDetails()
         {
-            foreach (ContactDetails contact in contactDetailslist)
+            Console.WriteLine("Enter the First Name to Delete Contact");
+            string input = Console.ReadLine();
+            if (contactDetailsMap.ContainsKey(input))
             {
-                Console.WriteLine(contact.tostring());
+                contactDetailsMap.Remove(input);
+            }
+            else
+            {
+                Console.WriteLine("Key not Found");
             }
         }
+       
         public static void Main(string[] args)
         {
             int Option = 0;
@@ -114,6 +128,7 @@ namespace AddressBook
                 Console.WriteLine("1: To Add a Contact Details.");
                 Console.WriteLine("2: To Compute Details.");
                 Console.WriteLine("3: To Edit a Contact Details.");
+                Console.WriteLine("4: To Delete Contact");
                 Console.WriteLine("0: To Exit");
                 try
                 {
@@ -130,6 +145,9 @@ namespace AddressBook
                             Console.WriteLine("Enter a First Name to Edit");
                             string key = Console.ReadLine();
                             details.EditDetails(key);
+                            break;
+                        case 4:
+                            details.DeleteDetails();
                             break;
                         case 0:
                             Console.WriteLine("Exit");

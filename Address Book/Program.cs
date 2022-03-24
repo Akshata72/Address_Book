@@ -48,25 +48,31 @@ namespace AddressBook
         }
         public void AddDetails()
         {
-            Console.WriteLine("Enter a First Name:");
-            string First_Name = Console.ReadLine();
-            Console.WriteLine("Enter a Last Name:");
-            string Last_Name = Console.ReadLine();
-            Console.WriteLine("Enter a Address:");
-            string Address = Console.ReadLine();
-            Console.WriteLine("Enter a City:");
-            string City = Console.ReadLine();
-            Console.WriteLine("Enter a State:");
-            string State = Console.ReadLine();
-            Console.WriteLine("Enter a ZIP:");
-            string ZIP = (Console.ReadLine());
-            Console.WriteLine("Enter a Phone Number:");
-            string Phone_Number = (Console.ReadLine());
-            Console.WriteLine("Enter a Email_Address:");
-            string Email_Address = Console.ReadLine();
-            ContactDetails contactDetails = new ContactDetails(First_Name, Last_Name, Address, City, State, ZIP, Phone_Number, Email_Address);
-            contactDetailslist.Add(contactDetails);
-            contactDetailsMap.Add(First_Name, contactDetails);
+            Console.WriteLine("Enter how many Contact Add:");
+            int Number = int.Parse(Console.ReadLine());
+            for(int i=1; i<=Number; i++)
+            {
+                Console.WriteLine("Contact " +i+":");
+                Console.WriteLine("Enter a First Name:");
+                string First_Name = Console.ReadLine();
+                Console.WriteLine("Enter a Last Name:");
+                string Last_Name = Console.ReadLine();
+                Console.WriteLine("Enter a Address:");
+                string Address = Console.ReadLine();
+                Console.WriteLine("Enter a City:");
+                string City = Console.ReadLine();
+                Console.WriteLine("Enter a State:");
+                string State = Console.ReadLine();
+                Console.WriteLine("Enter a ZIP:");
+                string ZIP = (Console.ReadLine());
+                Console.WriteLine("Enter a Phone Number:");
+                string Phone_Number = (Console.ReadLine());
+                Console.WriteLine("Enter a Email_Address:");
+                string Email_Address = Console.ReadLine();
+                ContactDetails contactDetails = new ContactDetails(First_Name, Last_Name, Address, City, State, ZIP, Phone_Number, Email_Address);
+                contactDetailslist.Add(contactDetails);
+                contactDetailsMap.Add(First_Name, contactDetails);
+            }
         }
         public void ComputeDetails()
         {

@@ -55,7 +55,6 @@ namespace AddressBookUsingCollection
                 person.DisplayPerson();
             }
         }
-
         public void EditContact(string firstName, string lastName)
         {
             int index = 0;

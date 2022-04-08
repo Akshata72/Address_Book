@@ -6,7 +6,6 @@ namespace AddressBookUsingCollection
     {
         static void Main(string[] args)
         {
-
             Console.WriteLine("Welcome to Address Book!");
             Console.WriteLine("Enter Address Book Name");
             string addressBookName = Console.ReadLine();
@@ -23,7 +22,8 @@ namespace AddressBookUsingCollection
                 Console.WriteLine("Enter 5 Add New Address Book");
                 Console.WriteLine("Enter 6 List of all Address Book");
                 Console.WriteLine("Enter 7 Search Person in City or State");
-                Console.WriteLine("Enter 8 Exit");
+                Console.WriteLine("Enter 8 View Person by City or State");
+                Console.WriteLine("Enter 9 Exit");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -69,13 +69,18 @@ namespace AddressBookUsingCollection
                         lastName = Console.ReadLine();
                         addressBookCollection.SearchPersonInCityOrState(firstName, lastName);
                         break;
+                    case 8:
+                        Console.WriteLine("Enter City Name");
+                        string cityName = Console.ReadLine();
+                        Console.WriteLine("Enter State Name");
+                        string stateName = Console.ReadLine();
+                        addressBookCollection.ViewPersonByCityOrState(cityName, stateName);
+                        break;
                     default:
                         Console.WriteLine("Invalid input");
                         break;
                 }
-            } while (choice != 8);
-
-
+            } while (choice != 9);
         }
     }
 }

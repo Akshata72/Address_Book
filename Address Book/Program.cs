@@ -16,14 +16,14 @@ namespace AddressBookUsingCollection
             int choice;
             do
             {
-                Console.WriteLine("Enter Choice:");
-                Console.WriteLine("1) Display All Contact");
-                Console.WriteLine("2) Add new Contact");
-                Console.WriteLine("3) Edit Contact");
-                Console.WriteLine("4) Delete Contact");
-                Console.WriteLine("5) Add New Address Book");
-                Console.WriteLine("6) List of all Address Book");
-                Console.WriteLine("7) Exit");
+                Console.WriteLine("Enter 1 for Display All Contact");
+                Console.WriteLine("Enter 2 Add new Contact");
+                Console.WriteLine("Enter 3 Edit Contact");
+                Console.WriteLine("Enter 4 Delete Contact");
+                Console.WriteLine("Enter 5 Add New Address Book");
+                Console.WriteLine("Enter 6 List of all Address Book");
+                Console.WriteLine("Enter 7 Search Person in City or State");
+                Console.WriteLine("Enter 8 Exit");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -70,7 +70,7 @@ namespace AddressBookUsingCollection
                         addressBookCollection.SearchPersonInCityOrState(firstName, lastName);
                         break;
                     default:
-                        Console.WriteLine("Thank you!!!!!!!!!");
+                        Console.WriteLine("Invalid input");
                         break;
                 }
             } while (choice != 8);

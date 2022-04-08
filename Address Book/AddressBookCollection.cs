@@ -1,12 +1,4 @@
-﻿//using CsvHelper;
-//using System;
-//using System.Collections.Generic;
-//using System.Globalization;
-//using System.Linq;
-//using System.Text;
-//using System.IO;
-//using System.Threading.Tasks;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,41 +33,3 @@ namespace AddressBookUsingCollection
         }
     }
 }
-
-
-
-
-
-
-
-
-
-//namespace AddressBook
-//{
-//    public class AddressBookCollection
-//    {
-//        public void ImplementCsv()
-//        {
-//            string improtFilePath = @"C:\Users\Admin\Desktop\programs\Address_Book\CsvFile.txt";
-//            string exportFilePath = @"C:\Users\Admin\Desktop\programs\Address_Book\CsvFile.txt";
-//            // writing csv file
-//            var write = new StreamWriter(exportFilePath);
-//            var csvexport = new CsvWriter(write, CultureInfo.InvariantCulture);
-//            {
-//                List<ContactDetails> sortedlist = SortByFirstName();
-//                csvexport.WriteRecords(sortedlist);
-//            }
-//            // reading csv file
-//            TextReader reader = new StreamReader(improtFilePath);
-//            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-//            {
-//                var records = csv.GetRecords<ContactDetails>().ToList();
-//                Console.WriteLine("Read data successfully from multipleAddressbook.csv here are code");
-//                foreach(ContactDetails contactdetails in records)
-//                {
-//                    Console.WriteLine("\t" + contactdetails.First_Name);
-//                }
-//            }
-//        }
-//    }
-//}

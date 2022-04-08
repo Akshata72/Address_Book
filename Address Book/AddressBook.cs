@@ -90,7 +90,6 @@ namespace AddressBookUsingCollection
             else
                 Console.WriteLine("Entry Not found for the name");
         }
-
         public void DeleteContact(string firstName, string lastName)
         {
             int index = 0;

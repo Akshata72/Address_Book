@@ -25,7 +25,8 @@ namespace AddressBookUsingCollection
                 Console.WriteLine("Enter 8 View Person by City or State");
                 Console.WriteLine("Enter 9 Count Contact by city or state");
                 Console.WriteLine("Enter 10 Contact sort by Person Name");
-                Console.WriteLine("Enter 10 Exit");
+                Console.WriteLine("Enter 11 sort by city state and zip");
+                Console.WriteLine("Enter 0 Exit");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -88,11 +89,14 @@ namespace AddressBookUsingCollection
                     case 10:
                         addressBook.SortByPersonName();
                         break;
+                    case 11:
+                        addressBook.SortByCityStateZip();
+                        break;
                     default:
                         Console.WriteLine("Invalid input");
                         break;
                 }
-            } while (choice != 11);
+            } while (choice != 0);
         }
     }
 }
